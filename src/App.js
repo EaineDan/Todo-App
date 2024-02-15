@@ -10,7 +10,6 @@ function App() {
       <AddTodo />
       <TodoList />
     </React.Fragment>
-
   );
 }
 
