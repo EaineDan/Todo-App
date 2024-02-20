@@ -1,9 +1,14 @@
+import {useLocalStorage} from "usehooks-ts";
 
 function TodoList () {
+    // let todos = [];
+    const [todos, setTodos] = useLocalStorage("TODO_KEY",[]);
+
     return (
          <ul>
-             <li>Complete Online Javascript Course</li>
-             <li>Jog around the park 3 times </li>
+             {todos.map(function(todo, index) {
+                return <li key={index}>{todo}</li>
+             })}
         </ul>
     
     );
