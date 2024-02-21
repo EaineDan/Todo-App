@@ -8,7 +8,8 @@ function AddTodo() {
     const [todo, setTodo] = useState("");
 
     function collectInput(event) {
-        todo = event.target.value;
+        // todo = event.target.value;
+        setTodo(event.target.value)
     }
 
     function saveTodo() {
@@ -16,11 +17,14 @@ function AddTodo() {
         // todos.push(todo);
         // Set all todos in local storage 
         setTodos([...todos, todo]);
+        // wipe the input
+        setTodo("")
     }
 
     return (
         <section className={styles.addTodo}>
-            <input 
+            <input
+                value={todo}
                 onChange={collectInput}               
                 className={styles.addTodoInput} 
                 placeholder="Start typing....."/>
